@@ -31,7 +31,8 @@ const Bootstrap = (props: SitecorePageProps): JSX.Element | null => {
           siteName: page.siteName || config.defaultSite,
           enableBrowserCookie: true,
           // Replace with the top level cookie domain of the website that is being integrated e.g ".example.com" and not "www.example.com"
-          cookieDomain: window.location.hostname.replace(/^www\./, ''),
+          //cookieDomain: window.location.hostname.replace(/^www\./, ''),
+          cookieDomain: process.env.NEXT_PUBLIC_COOKIE_DOMAIN,
         })
           .addEvents()
           .initialize();

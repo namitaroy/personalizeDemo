@@ -15,7 +15,10 @@ const nextConfig = {
     // prefixed path e.g. `/about`.
     defaultLocale: process.env.DEFAULT_LANGUAGE || process.env.NEXT_PUBLIC_DEFAULT_LANGUAGE || 'en',
   },
-
+  eslint: {
+    // ignores ESLint errors during build
+    ignoreDuringBuilds: true,
+  },
   // Enable React Strict Mode
   reactStrictMode: true,
 

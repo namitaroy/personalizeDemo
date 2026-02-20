@@ -1,28 +1,28 @@
-import  { JSX } from 'react';
+import { JSX } from 'react';
 import {
-    NextImage as ContentSdkImage,
-    Link as ContentSdkLink,
-    RichText as ContentSdkRichText,
-    ImageField,
-    LinkField,
-    Field,
-    Text
-} from '@sitecore-content-sdk/nextjs'
+  NextImage as ContentSdkImage,
+  Link as ContentSdkLink,
+  RichText as ContentSdkRichText,
+  ImageField,
+  LinkField,
+  Field,
+  Text,
+} from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 
 interface Fields {
-        title : Field<string>,
-        description: Field<string>,
-        bkImage: ImageField,
-        cta: LinkField
-    }
-type HeroBannerProps = ComponentProps & {
-    fields : Fields
+  title: Field<string>;
+  description: Field<string>;
+  bkImage: ImageField;
+  cta: LinkField;
 }
+type HeroBannerProps = ComponentProps & {
+  fields: Fields;
+};
 
-const HeroBanner = (props : HeroBannerProps) : JSX.Element => {
-    const {fields} = props;
-     return (
+const HeroBanner = (props: HeroBannerProps): JSX.Element => {
+  const { fields } = props;
+  return (
     <section className="hero-banner relative text-white">
       <div className="absolute inset-0">
         <ContentSdkImage field={fields.bkImage} className="w-full h-full object-cover" />
@@ -33,8 +33,7 @@ const HeroBanner = (props : HeroBannerProps) : JSX.Element => {
         <ContentSdkRichText field={fields.description} className="mt-6" />
 
         {fields.cta && (
-          <ContentSdkLink field={fields.cta} className="mt-8 inline-block bg-blue-600 px-6 py-3 rounded">
-           </ContentSdkLink>
+          <ContentSdkLink field={fields.cta} className="mt-8 inline-block bg-blue-600 px-6 py-3 rounded" />
         )}
       </div>
     </section>
